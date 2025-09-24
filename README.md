@@ -1,5 +1,6 @@
 # TOP 10% LINT
-This scripts calculates and extracts the top 10% lint per system prompt type in a dataset
+This scripts calculates and extracts the top percentile lint per system prompt type in a dataset. It identifies each unique sys_prompt and extract each to corresponding `jsonl` files.  
+To calculate the top performing prompts, `TikToken` was used.
 
 ## RUN
 To run the code, first install the required libraries.  
