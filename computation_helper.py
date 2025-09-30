@@ -74,7 +74,7 @@ class TextMatcher:
 
         return (
             prompt_identifier,
-            json.dumps(item) + '\n',
+            json.dumps(item, ensure_ascii=False) + '\n',
             f"{i},{system_tokens},{human_tokens},{gpt_tokens},{total_tokens}\n"
         )
 
@@ -137,7 +137,7 @@ class TopPercentileLint:
         output_lines = []
         csv = pd.read_csv(f'{file}.csv')
         for _, row in csv.iterrows():
-            output_lines.append(json.dumps(jsonl_file[row['line_num']]) + '\n')
+            output_lines.append(json.dumps(jsonl_file[row['line_num']], ensure_ascii=False) + '\n')
         return file, output_lines
 
     def extract_top_percentile_jsonl_lines(self, jsonl_file):
